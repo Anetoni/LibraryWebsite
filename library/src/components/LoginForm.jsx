@@ -1,20 +1,30 @@
+import loginImg from '../assets/login.jpg'
+
 const LoginForm = () => {
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-      <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Log in to access your library</h1>
-      <form>
-        <div className="self-auto">
-          E-mail Address: 
-          <input type="text" name="email"></input>
-        </div>
-        <div className="self-auto">
-          Password:
-          <input type="text" name="password"></input>
-        </div>
-        <button type="submit" name="login">login</button>
-      </form>
-      <div>
-        Don't have an account? <button >Register now</button>
+    <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
+      <div className='hidden sm:block'>
+        <img className="w-full h-full object-cover overflow-hidden" src={loginImg} alt="" />
+      </div>
+
+      <div className="bg-red-200 flex flex-col justify-center">
+        <form className="max-w-[400px] w-full mx-auto bg-white p-4 rounded">
+          <h2 className='text-4xl font-bold text-center py-5'>Log in to access your library</h2>
+          <div className="flex flex-col py-2">
+            <label>Email</label>
+            <input className="border p-2 rounded" name="email" id="email" placeholder='Your email'></input>
+          </div>
+          <div className="flex flex-col py-2">
+            <label>Password</label>
+            <input className="border p-2 rounded" type="password" name="password" id="password" placeholder=""></input>
+          </div>
+          <button>Sign in</button>
+          <div>
+            <p>
+              <input type="checkbox" /> Remember Me
+            </p>
+          </div>
+        </form>
       </div>
     </div>
   )
